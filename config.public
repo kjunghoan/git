@@ -29,6 +29,9 @@
   sl = stash list
   sp = stash pop
   drop = !git stash && git stash drop
+
+  loga = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all
+
 [core]
 	editor = nvim
 [init]
