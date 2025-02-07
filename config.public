@@ -1,35 +1,41 @@
 [include]
   path = config.private
 [alias]
+  # Common
   st = status -s
   sta = status
-
-  conf = config --global --edit
-  cge = config --global --edit
-  
   ci = commit
   aa = add -A
-  
   co = checkout
-  cod = checkout .
   br = branch
-  bra = branch -a
 
-  rh = reset HEAD
-  cdf = clean -df
-  pr = pull --rebase
-  rb = rebase
-  amend = commit -a --amend --no-edit
-  ciam = commit -a --amend --no-edit
-  oops = commit --amend --no-edit
+  # branch management
+  cod = checkout . # Discards all uncommited changes in tracked files in working dir (irreversable)
+  bra = branch -a # Lists all branches
+  fprune = !git fetch --prune && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -D # Deletes local branches that have been deleted on remote
+  fpull = !git fetch --all && git pull --all # fetches and pulls all locally tracked branches
 
-  fprune = !git fetch --prune && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -D
-  fpull = !git fetch --all && git pull --all
+  # Commit amendments & fixes
+  amend = commit -a --amend --no-edit # amends all tracked changes files to last commit
+  ciam = commit -a --amend --no-edit  # another alias for ^
+  oops = commit --amend --no-edit     # amends only the staged changes to last commit
+  cdf = clean -df                     # removes all untracked files and directories from working dir
+  rh = reset HEAD                     # unstages all staged changes
 
+  # stash management
   sl = stash list
   sp = stash pop
   drop = !git stash && git stash drop
 
+  # rebase stuff
+  pr = pull --rebase
+  rb = rebase
+
+  # config
+  conf = config --global --edit
+  cge = config --global --edit
+
+  # tree
   loga = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all
 
 [core]
