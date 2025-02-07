@@ -24,7 +24,7 @@
   oops = commit --amend --no-edit
 
   fprune = !git fetch --prune && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -D
-  fpull = !git fetch --all && git pull
+  fpull = !git fetch --all && git pull --all
 
   sl = stash list
   sp = stash pop
@@ -33,6 +33,6 @@
   loga = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all
 
 [core]
-	editor = nvim
+  editor = nvim
 [init]
-	defaultBranch = main
+  defaultBranch = main
