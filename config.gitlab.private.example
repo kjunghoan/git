@@ -1,0 +1,13 @@
+# vim: filetype=config
+[user]
+    name = <your name>
+    email = <your gitlab email>
+    signingkey = <signing key>
+[gpg]
+    format = ssh
+[commit]
+    gpgsign = true
+# [credential "https://gitlab.kjunghoan.com"]
+[credential "<ip/url of gitlab instance>"]
+  username = <username>
+  helper = store

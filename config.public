@@ -1,3 +1,4 @@
+# vim: filetype=config
 [include]
   path = config.private
 [alias]

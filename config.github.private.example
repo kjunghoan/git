@@ -1,3 +1,4 @@
+# vim: filetype=config
 [user]
   name = <your name>
   email = <your email>

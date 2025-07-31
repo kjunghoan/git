@@ -1,2 +1,6 @@
 [include]
   path = config.public
+  path = config.github.private
+
+[includeIf "gitdir:~/homelab/"]
+    path = config.gitlab.private
