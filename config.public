@@ -22,6 +22,7 @@
   oops = commit --amend --no-edit     # amends only the staged changes to last commit
   cdf = clean -df                     # removes all untracked files and directories from working dir
   rh = reset HEAD                     # unstages all staged changes
+  pwl = push --force-with-lease
 
   # stash management
   sl = stash list
