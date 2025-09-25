@@ -1,4 +1,4 @@
-# vim: filetype=config
+# vim: filetype=toml
 [include]
   path = config.private
 [alias]
@@ -9,6 +9,8 @@
   aa = add -A
   co = checkout
   br = branch
+  p = pull
+  pu = push
 
   # branch management
   cod = checkout . # Discards all uncommited changes in tracked files in working dir (irreversable)
