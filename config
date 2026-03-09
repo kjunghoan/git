@@ -4,3 +4,6 @@
 
 [includeIf "gitdir:~/homelab/"]
     path = config.gitlab.private
+
+[includeIf "gitdir:~/school/"]
+    path = config.school.private

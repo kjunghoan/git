@@ -1,4 +1,4 @@
-# vim: filetype=toml
+# vim: filetype=config
 [include]
   path = config.private
 [alias]
@@ -9,8 +9,6 @@
   aa = add -A
   co = checkout
   br = branch
-  p = pull
-  pu = push
 
   # branch management
   cod = checkout . # Discards all uncommited changes in tracked files in working dir (irreversable)
@@ -20,7 +18,7 @@
 
   # Commit amendments & fixes
   amend = commit -a --amend --no-edit # amends all tracked changes files to last commit
-  ciam = commit -a --amend --no-edit  # another alias for ^
+  ciam = commit -a --amend  # another alias for ^
   oops = commit --amend --no-edit     # amends only the staged changes to last commit
   cdf = clean -df                     # removes all untracked files and directories from working dir
   rh = reset HEAD                     # unstages all staged changes
@@ -34,6 +32,13 @@
   # rebase stuff
   pr = pull --rebase
   rb = rebase
+  rbc = rebase --continue
+  rba = rebase --abort
+
+  # reset commands
+  rhard = reset --hard HEAD
+  rsoft = reset --soft HEAD^
+  rs = reset --soft
 
   # config
   conf = config --global --edit
